@@ -1,0 +1,356 @@
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* ========== LR Styles ========== */
+/* ===== Variables ===== */
+:root {
+  --mainBg: #60d2b2;
+  --mainAlt: #80dbc1;
+  --completed: #bfede0;
+  --crimsion: #d62839;
+  --accent: #effbf7;
+  --mainText: #343434;
+  --silver: #d5d5d8;
+}
+/* ===== Main Container ===== */
+body {
+  background-color: var(--mainBg);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Roboto', sans-serif;
+}
+.main-container {
+  background-color: white;
+  color: var(--mainText);
+  border-radius: 4rem;
+  width: 80vw;
+  height: 80vh;
+  margin-top: 20%;
+  display: grid;
+  grid-template-rows: 0.5fr 1fr;
+  grid-template-areas:
+    'title'
+    'list';
+}
+
+/* ===== Main Section ===== */
+.title {
+  grid-area: title;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+h1 {
+  font-size: 2rem;
+  font-weight: 500;
+  color: var(--mainText);
+}
+
+.mainInput {
+  border: none;
+  border-bottom: 1px solid gray;
+}
+.mainInput:focus-visible {
+  outline: none;
+  border-bottom: 2px solid gray;
+}
+
+.submitBtn {
+  border: none;
+  background-color: var(--silver);
+  width: 4rem;
+  height: 1.8rem;
+  border-radius: 2rem;
+  font-weight: 600;
+}
+
+.submitBtn:hover {
+  background-color: var(--mainAlt);
+  transition: all 0.15s ease-in-out;
+}
+
+/* ==== Main List ===== */
+.mainList {
+  grid-area: list;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+ul {
+  width: 60vw;
+  height: 380px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  overflow-y: scroll;
+}
+
+ul::-webkit-scrollbar {
+  display: none;
+}
+
+li {
+  border: 1.5px solid #d6d6d6;
+  border-radius: 2rem;
+  width: 90%;
+  height: 30px;
+  margin: 10px auto 0px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: var(--accent);
+}
+
+/* ===== Trash Button ===== */
+.trashBtn {
+  padding: 0.3rem;
+  margin: 0 1rem 0;
+  color: var(--crimsion);
+}
+
+.trashBtn:hover {
+  background-color: var(--crimsion);
+  border-radius: 0.5rem;
+  color: white;
+  transition: background-color 0.15s ease-in-out;
+}
+
+/* ===== Text ===== */
+.todoText {
+  margin: 0 0.5rem 0;
+}
+
+/* ===== Completed Styles ===== */
+.completed {
+  opacity: 0.7;
+  border: 1.5px solid #80dbc1;
+  background-color: var(--completed);
+  color: #999999;
+}
+
+/* ===== Media Queries ===== */
+/* ==== Tablet ===== */
+@media only screen and (min-width: 418px) and (max-width: 1025px) {
+  .main-container {
+    background-color: white;
+    color: var(--mainText);
+    border-radius: 4rem;
+    width: 80vw;
+    height: 80vh;
+    margin-top: 13%;
+    display: grid;
+    grid-template-rows: 0.5fr 1fr;
+    grid-template-areas:
+      'title'
+      'list';
+  }
+
+  h1 {
+    font-size: 3.5rem;
+    font-weight: 500;
+    color: var(--mainText);
+  }
+
+  .mainInput {
+    font-size: 1.3rem;
+  }
+
+  .submitBtn {
+    width: 4rem;
+    height: 1.8rem;
+    border-radius: 2rem;
+    font-weight: 600;
+    font-size: 1rem;
+  }
+
+  .todoPreview {
+    font-size: 2rem;
+  }
+  /* ===== Main List ===== */
+  ul {
+    width: 60vw;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    overflow-y: scroll;
+  }
+
+  li {
+    border: 1.5px solid #d6d6d6;
+    border-radius: 2rem;
+    width: 70%;
+    height: 40px;
+    margin: 10px auto 0px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: var(--accent);
+  }
+}
+
+/* ===== Desktop ===== */
+@media only screen and (min-width: 1025px) {
+  .main-container {
+    background-color: white;
+    color: var(--mainText);
+    border-radius: 4rem;
+    width: 80vw;
+    height: 80vh;
+    margin-top: 5%;
+    display: grid;
+    grid-template-rows: 0.5fr 1fr;
+    grid-template-areas:
+      'title'
+      'list';
+  }
+
+  /* ==== Main List ===== */
+
+  ul {
+    width: 60vw;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    overflow-y: scroll;
+  }
+
+  li {
+    border: 1.5px solid #d6d6d6;
+    border-radius: 2rem;
+    width: 50%;
+    height: 30px;
+    margin: 10px auto 0px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: var(--accent);
+  }
+}
