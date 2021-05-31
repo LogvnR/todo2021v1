@@ -145,10 +145,10 @@ body {
 .main-container {
   background-color: white;
   color: var(--mainText);
-  border-radius: 4rem;
+  border-radius: 2rem;
   width: 80vw;
   height: 80vh;
-  margin-top: 20%;
+  margin-top: 15%;
   display: grid;
   grid-template-rows: 0.5fr 1fr;
   grid-template-areas:
@@ -281,6 +281,18 @@ li {
 }
 
 /* ===== Media Queries ===== */
+/* ===== Small Phone ===== */
+@media only screen and (min-width: 360px) and (max-width: 410px) {
+  ul {
+    width: 60vw;
+    height: 340px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    overflow-y: scroll;
+  }
+}
+
 /* ==== Tablet ===== */
 @media only screen and (min-width: 418px) and (max-width: 1025px) {
   .main-container {
