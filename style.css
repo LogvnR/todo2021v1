@@ -126,8 +126,8 @@ table {
 /* ========== LR Styles ========== */
 /* ===== Variables ===== */
 :root {
-  --mainBg: #60d2b2;
-  --mainAlt: #80dbc1;
+  --mainBg: #2fccf9;
+  --mainAlt: #6cd7f5;
   --completed: #bfede0;
   --crimsion: #d62839;
   --accent: #effbf7;
@@ -175,6 +175,11 @@ h1 {
   border: none;
   border-bottom: 1px solid gray;
 }
+
+.mainInput::placeholder {
+  color: #c5c5c5;
+}
+
 .mainInput:focus-visible {
   outline: none;
   border-bottom: 2px solid gray;
@@ -182,7 +187,8 @@ h1 {
 
 .submitBtn {
   border: none;
-  background-color: var(--silver);
+  background-color: #1863fc;
+  color: white;
   width: 4rem;
   height: 1.8rem;
   border-radius: 2rem;
@@ -191,7 +197,12 @@ h1 {
 
 .submitBtn:hover {
   background-color: var(--mainAlt);
+  color: var(--mainText);
   transition: all 0.15s ease-in-out;
+}
+
+.todoPreview {
+  color: #1863fc;
 }
 
 /* ==== Main List ===== */
@@ -224,21 +235,25 @@ li {
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  background-color: var(--accent);
+  background-image: linear-gradient(to right, #1863fc, #1863fc, #33d1fc);
+  color: #e4e4e4;
 }
 
 /* ===== Trash Button ===== */
 .trashBtn {
-  padding: 0.3rem;
+  font-size: 1rem;
+  padding: 0.2rem;
   margin: 0 1rem 0;
-  color: var(--crimsion);
+  color: #1863fc;
+  background-color: white;
+  border-radius: 0.5rem;
 }
 
 .trashBtn:hover {
   background-color: var(--crimsion);
   border-radius: 0.5rem;
   color: white;
-  transition: background-color 0.15s ease-in-out;
+  transition: background-color 0.25s ease-in-out;
 }
 
 /* ===== Text ===== */
@@ -251,7 +266,18 @@ li {
   opacity: 0.7;
   border: 1.5px solid #80dbc1;
   background-color: var(--completed);
+  background-image: none;
   color: #999999;
+}
+
+.completed > .trashBtn {
+  color: #999999;
+}
+
+.completed > .trashBtn:hover {
+  color: var(--crimsion);
+  background-color: white;
+  transition: color 0.25s ease-in-out;
 }
 
 /* ===== Media Queries ===== */
