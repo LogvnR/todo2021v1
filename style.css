@@ -142,6 +142,14 @@ body {
   align-items: center;
   font-family: 'Roboto', sans-serif;
 }
+
+#logo {
+  width: 3.4rem;
+  height: 3.2rem;
+  position: absolute;
+  transform: translateY(-330px);
+}
+
 .main-container {
   background-color: white;
   color: var(--mainText);
@@ -283,6 +291,13 @@ li {
 /* ===== Media Queries ===== */
 /* ===== Small Phone ===== */
 @media only screen and (min-width: 360px) and (max-width: 410px) {
+  #logo {
+    width: 3.4rem;
+    height: 3.2rem;
+    position: absolute;
+    transform: translateY(-255px);
+  }
+  
   ul {
     width: 60vw;
     height: 340px;
@@ -295,6 +310,13 @@ li {
 
 /* ==== Tablet ===== */
 @media only screen and (min-width: 418px) and (max-width: 1025px) {
+  #logo {
+    width: 4.4rem;
+    height: 4.2rem;
+    position: absolute;
+    transform: translateY(-410px);
+  }
+  
   .main-container {
     background-color: white;
     color: var(--mainText);
@@ -355,6 +377,13 @@ li {
 
 /* ===== Desktop ===== */
 @media only screen and (min-width: 1025px) {
+  #logo {
+    width: 3.4rem;
+    height: 3.2rem;
+    position: absolute;
+    transform: translateY(-260px);
+  }
+  
   .main-container {
     background-color: white;
     color: var(--mainText);
